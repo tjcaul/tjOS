@@ -1,0 +1,52 @@
+#include "printf.h"
+
+static void print (wchar_t *str) {
+	ST->ConOut->OutputString(ST->ConOut, str);
+}
+
+static void strset (wchar_t *buf, int len, wchar_t c) {
+	for (int i = 0; i < len; ++i)
+		buf[i] = c;
+}
+
+static void itoa (wchar_t *buf, int num, int base, int us) {
+	int neg;
+	if (!us) {
+		neg = (num < 0);
+		if (neg)
+			num *= -1;
+	}
+	strset(buf, 11, ' ');
+	buf[10] = '\0';
+	if (base == 0)
+		base = 10;
+	int i = 9;
+	while (1) {
+		char c = num % base;
+		if (c < 0)
+			c *= -1;
+		if (c < 10)
+			c += '0';
+		else
+			c += 'a' - 10;
+			
+		buf[i--] = c;
+		num /= base;
+		if (num == 0 || i == 0) {
+			if (neg && us)
+				buf[i] = '-';
+			return;
+		}
+	}
+}
+
+static void printi (int val) {
+	wchar_t str[11];
+	itoa(str, val, 0, 0);
+	ST->ConOut->OutputString(ST->ConOut, str);
+}
+
+static void printix (int val) {
+	wchar_t str[11];
+	itoa(str, val, 16, 1);
+	ST->ConOut->OutputString(ST->ConOut, str);

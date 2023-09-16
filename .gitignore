@@ -1,0 +1,9 @@
+.DS_Store
+build/*
+tools/bin/*
+tools/compiler/bin
+tools/compiler/include
+tools/compiler/lib
+tools/compiler/libexec
+tools/compiler/share
+tools/compiler/x86_64-w64-mingw32
