@@ -1,4 +1,5 @@
 #!/bin/zsh
+# Requires mtools
 cd "$(dirname $(realpath $0))/.."
 
 PATH="$PWD/tools/bin:$PATH"
