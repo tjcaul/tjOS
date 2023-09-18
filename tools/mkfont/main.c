@@ -96,7 +96,7 @@ int main (int argc, char **argv) {
 	char *endptr;
 	width = strtoi(argv[ARG_WIDTH]);
 	height = strtoi(argv[ARG_HEIGHT]);
-	if (argc == 3) {
+	if (argc == 4) {
 		box_width = width * 5 / 4;   //Reasonable default
 		box_height = height * 5 / 4; //If you don't like it, specify a better one in argv!
 	} else {
