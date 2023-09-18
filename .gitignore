@@ -1,5 +1,7 @@
 .DS_Store
 build/*
+src/font/*.c
+include/font/*.h
 tools/bin/*
 tools/compiler/bin
 tools/compiler/include
