@@ -7,3 +7,4 @@ tools/compiler/lib
 tools/compiler/libexec
 tools/compiler/share
 tools/compiler/x86_64-w64-mingw32
+qemu/OVMF_VARS-pure-efi.fd

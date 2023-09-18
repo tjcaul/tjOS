@@ -10,6 +10,7 @@ Includes a QEMU setup to run it virtually as well.
 ```
 git clone --depth 1 https://github.com/tjcaul/tjOS
 cd tjOS/
+cp qemu/OVMF_VARS-pure-efi.fd.default qemu/OVMF_VARS-pure-efi.fd
 tools/compiler/build.sh
 tools/compiler/clean.sh
 tools/mkfont/build.sh
