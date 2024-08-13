@@ -20,6 +20,10 @@ big-print(){
 
 case "$entry" in
 all)
+	brew install make texinfo zlib zstd libelf
+	;&
+
+download)
 	big-print DOWNLOADING
 	cd $thisdir
 	rm -r bin binutils-* build-binutils build-gcc gcc-* include lib libexec share x86_64-*
@@ -40,8 +44,8 @@ binutils)
 	mkdir build-binutils
 	cd build-binutils
 	../binutils-*/configure --target="$target" --prefix="$prefix" --with-sysroot --disable-nls --disable-werror
-	make -j2
-	make -j2 install
+	make -j2 all-gas all-ld all-binutils
+	make -j2 install-gas install-ld install-binutils
 	;&
 
 no-red-zone)
@@ -74,5 +78,5 @@ ln)
 	;;
 
 *)
-	echo "Must supply entry point (all, binutils, no-red-zone, or gcc"
+	echo "Must supply entry point (all, download, binutils, no-red-zone, or gcc"
 esac

@@ -18,5 +18,5 @@ mkfat
 mkgpt -o build/hd.img \
 	--image-size 4096 \
 	--part build/fat.img --type system \
-	--uuid 746a4f53-746a-6361-756c-1337deadbeef
+	--uuid 746a4f53-746a-6361-756c-1337deadbeef # "tjOStjcaul-1337deadbeef"
 rm build/fat.img
